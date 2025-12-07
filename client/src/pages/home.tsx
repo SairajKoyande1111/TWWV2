@@ -948,6 +948,183 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
+      {/* Transformation Gallery - Auto-scrolling Slider */}
+      <AnimatedSection variant="slideInRight">
+        <section className="py-12 md:py-16 lg:py-20 bg-card relative overflow-hidden border-t border-primary/10" id="transformations">
+          <div className="w-full relative">
+            <div className="text-center mb-10 md:mb-12 lg:mb-16 px-4 md:px-6 lg:px-8">
+              <motion.h2 
+                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                data-testid="heading-transformations"
+              >
+                Witness the <span className="text-primary">Transformation</span>
+              </motion.h2>
+              <motion.p 
+                className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto font-semibold"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                data-testid="text-transformations-subtitle"
+              >
+                From doubt to dedication, see how our members achieved their dream bodies
+              </motion.p>
+            </div>
+            
+            <style>{`
+              @keyframes scroll-horizontal {
+                0% {
+                  transform: translateX(0);
+                }
+                100% {
+                  transform: translateX(-50%);
+                }
+              }
+
+              @keyframes scroll-horizontal-reverse {
+                0% {
+                  transform: translateX(-50%);
+                }
+                100% {
+                  transform: translateX(0);
+                }
+              }
+              
+              .scroll-container {
+                display: flex;
+                animation: scroll-horizontal 10s linear infinite;
+              }
+
+              .scroll-container-reverse {
+                display: flex;
+                animation: scroll-horizontal-reverse 10s linear infinite;
+              }
+              
+              .scroll-container:hover,
+              .scroll-container-reverse:hover {
+                animation-play-state: paused;
+              }
+            `}</style>
+            
+            {/* First Carousel - Right to Left */}
+            <div className="w-full overflow-hidden mb-8">
+              <div className="scroll-container">
+                {/* First set of images */}
+                {[
+                  { img: transform1, alt: "Fitness transformation 1", testId: "img-transformation-1" },
+                  { img: transform2, alt: "Fitness transformation 2", testId: "img-transformation-2" },
+                  { img: transform3, alt: "Fitness transformation 3", testId: "img-transformation-3" },
+                  { img: transform4, alt: "Fitness transformation 4", testId: "img-transformation-4" },
+                  { img: transform5, alt: "Fitness transformation 5", testId: "img-transformation-5" },
+                  { img: transform6, alt: "Fitness transformation 6", testId: "img-transformation-6" },
+                  { img: transform7, alt: "Fitness transformation 7", testId: "img-transformation-7" },
+                  { img: transform8, alt: "Fitness transformation 8", testId: "img-transformation-8" }
+                ].map((item, idx) => (
+                  <div 
+                    key={idx}
+                    className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
+                    data-testid={`card-transformation-${idx + 1}`}
+                  >
+                    <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
+                      <img 
+                        src={item.img} 
+                        alt={item.alt} 
+                        className="w-full h-full object-cover"
+                        data-testid={item.testId}
+                      />
+                    </div>
+                  </div>
+                ))}
+                {/* Duplicate set for infinite scroll effect */}
+                {[
+                  { img: transform1, alt: "Fitness transformation 1 duplicate" },
+                  { img: transform2, alt: "Fitness transformation 2 duplicate" },
+                  { img: transform3, alt: "Fitness transformation 3 duplicate" },
+                  { img: transform4, alt: "Fitness transformation 4 duplicate" },
+                  { img: transform5, alt: "Fitness transformation 5 duplicate" },
+                  { img: transform6, alt: "Fitness transformation 6 duplicate" },
+                  { img: transform7, alt: "Fitness transformation 7 duplicate" },
+                  { img: transform8, alt: "Fitness transformation 8 duplicate" }
+                ].map((item, idx) => (
+                  <div 
+                    key={`duplicate-${idx}`}
+                    className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
+                  >
+                    <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
+                      <img 
+                        src={item.img} 
+                        alt={item.alt} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Second Carousel - Left to Right */}
+            <div className="w-full overflow-hidden">
+              <div className="scroll-container-reverse">
+                {/* First set of images */}
+                {[
+                  { img: transform1, alt: "Fitness transformation 1", testId: "img-transformation-1-reverse" },
+                  { img: transform2, alt: "Fitness transformation 2", testId: "img-transformation-2-reverse" },
+                  { img: transform3, alt: "Fitness transformation 3", testId: "img-transformation-3-reverse" },
+                  { img: transform4, alt: "Fitness transformation 4", testId: "img-transformation-4-reverse" },
+                  { img: transform5, alt: "Fitness transformation 5", testId: "img-transformation-5-reverse" },
+                  { img: transform6, alt: "Fitness transformation 6", testId: "img-transformation-6-reverse" },
+                  { img: transform7, alt: "Fitness transformation 7", testId: "img-transformation-7-reverse" },
+                  { img: transform8, alt: "Fitness transformation 8", testId: "img-transformation-8-reverse" }
+                ].map((item, idx) => (
+                  <div 
+                    key={idx}
+                    className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
+                    data-testid={`card-transformation-reverse-${idx + 1}`}
+                  >
+                    <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
+                      <img 
+                        src={item.img} 
+                        alt={item.alt} 
+                        className="w-full h-full object-cover"
+                        data-testid={item.testId}
+                      />
+                    </div>
+                  </div>
+                ))}
+                {/* Duplicate set for infinite scroll effect */}
+                {[
+                  { img: transform1, alt: "Fitness transformation 1 duplicate" },
+                  { img: transform2, alt: "Fitness transformation 2 duplicate" },
+                  { img: transform3, alt: "Fitness transformation 3 duplicate" },
+                  { img: transform4, alt: "Fitness transformation 4 duplicate" },
+                  { img: transform5, alt: "Fitness transformation 5 duplicate" },
+                  { img: transform6, alt: "Fitness transformation 6 duplicate" },
+                  { img: transform7, alt: "Fitness transformation 7 duplicate" },
+                  { img: transform8, alt: "Fitness transformation 8 duplicate" }
+                ].map((item, idx) => (
+                  <div 
+                    key={`duplicate-reverse-${idx}`}
+                    className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
+                  >
+                    <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
+                      <img 
+                        src={item.img} 
+                        alt={item.alt} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
       {/* About House of Champions */}
       <AnimatedSection variant="fadeIn">
         <section className="py-12 md:py-16 lg:py-20 bg-card relative overflow-hidden border-t border-primary/10" id="about">
@@ -1198,183 +1375,6 @@ export default function Home() {
                   house_of_champions_studio
                 </span>
               </a>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
-
-      {/* Transformation Gallery - Auto-scrolling Slider */}
-      <AnimatedSection variant="slideInRight">
-        <section className="py-12 md:py-16 lg:py-20 bg-card relative overflow-hidden border-t border-primary/10" id="transformations">
-          <div className="w-full relative">
-            <div className="text-center mb-10 md:mb-12 lg:mb-16 px-4 md:px-6 lg:px-8">
-              <motion.h2 
-                className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 tracking-tight text-foreground"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                data-testid="heading-transformations"
-              >
-                Witness the <span className="text-primary">Transformation</span>
-              </motion.h2>
-              <motion.p 
-                className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto font-semibold"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                data-testid="text-transformations-subtitle"
-              >
-                From doubt to dedication, see how our members achieved their dream bodies
-              </motion.p>
-            </div>
-            
-            <style>{`
-              @keyframes scroll-horizontal {
-                0% {
-                  transform: translateX(0);
-                }
-                100% {
-                  transform: translateX(-50%);
-                }
-              }
-
-              @keyframes scroll-horizontal-reverse {
-                0% {
-                  transform: translateX(-50%);
-                }
-                100% {
-                  transform: translateX(0);
-                }
-              }
-              
-              .scroll-container {
-                display: flex;
-                animation: scroll-horizontal 10s linear infinite;
-              }
-
-              .scroll-container-reverse {
-                display: flex;
-                animation: scroll-horizontal-reverse 10s linear infinite;
-              }
-              
-              .scroll-container:hover,
-              .scroll-container-reverse:hover {
-                animation-play-state: paused;
-              }
-            `}</style>
-            
-            {/* First Carousel - Right to Left */}
-            <div className="w-full overflow-hidden mb-8">
-              <div className="scroll-container">
-                {/* First set of images */}
-                {[
-                  { img: transform1, alt: "Fitness transformation 1", testId: "img-transformation-1" },
-                  { img: transform2, alt: "Fitness transformation 2", testId: "img-transformation-2" },
-                  { img: transform3, alt: "Fitness transformation 3", testId: "img-transformation-3" },
-                  { img: transform4, alt: "Fitness transformation 4", testId: "img-transformation-4" },
-                  { img: transform5, alt: "Fitness transformation 5", testId: "img-transformation-5" },
-                  { img: transform6, alt: "Fitness transformation 6", testId: "img-transformation-6" },
-                  { img: transform7, alt: "Fitness transformation 7", testId: "img-transformation-7" },
-                  { img: transform8, alt: "Fitness transformation 8", testId: "img-transformation-8" }
-                ].map((item, idx) => (
-                  <div 
-                    key={idx}
-                    className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
-                    data-testid={`card-transformation-${idx + 1}`}
-                  >
-                    <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
-                      <img 
-                        src={item.img} 
-                        alt={item.alt} 
-                        className="w-full h-full object-cover"
-                        data-testid={item.testId}
-                      />
-                    </div>
-                  </div>
-                ))}
-                {/* Duplicate set for infinite scroll effect */}
-                {[
-                  { img: transform1, alt: "Fitness transformation 1 duplicate" },
-                  { img: transform2, alt: "Fitness transformation 2 duplicate" },
-                  { img: transform3, alt: "Fitness transformation 3 duplicate" },
-                  { img: transform4, alt: "Fitness transformation 4 duplicate" },
-                  { img: transform5, alt: "Fitness transformation 5 duplicate" },
-                  { img: transform6, alt: "Fitness transformation 6 duplicate" },
-                  { img: transform7, alt: "Fitness transformation 7 duplicate" },
-                  { img: transform8, alt: "Fitness transformation 8 duplicate" }
-                ].map((item, idx) => (
-                  <div 
-                    key={`duplicate-${idx}`}
-                    className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
-                  >
-                    <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
-                      <img 
-                        src={item.img} 
-                        alt={item.alt} 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Second Carousel - Left to Right */}
-            <div className="w-full overflow-hidden">
-              <div className="scroll-container-reverse">
-                {/* First set of images */}
-                {[
-                  { img: transform1, alt: "Fitness transformation 1", testId: "img-transformation-1-reverse" },
-                  { img: transform2, alt: "Fitness transformation 2", testId: "img-transformation-2-reverse" },
-                  { img: transform3, alt: "Fitness transformation 3", testId: "img-transformation-3-reverse" },
-                  { img: transform4, alt: "Fitness transformation 4", testId: "img-transformation-4-reverse" },
-                  { img: transform5, alt: "Fitness transformation 5", testId: "img-transformation-5-reverse" },
-                  { img: transform6, alt: "Fitness transformation 6", testId: "img-transformation-6-reverse" },
-                  { img: transform7, alt: "Fitness transformation 7", testId: "img-transformation-7-reverse" },
-                  { img: transform8, alt: "Fitness transformation 8", testId: "img-transformation-8-reverse" }
-                ].map((item, idx) => (
-                  <div 
-                    key={idx}
-                    className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
-                    data-testid={`card-transformation-reverse-${idx + 1}`}
-                  >
-                    <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
-                      <img 
-                        src={item.img} 
-                        alt={item.alt} 
-                        className="w-full h-full object-cover"
-                        data-testid={item.testId}
-                      />
-                    </div>
-                  </div>
-                ))}
-                {/* Duplicate set for infinite scroll effect */}
-                {[
-                  { img: transform1, alt: "Fitness transformation 1 duplicate" },
-                  { img: transform2, alt: "Fitness transformation 2 duplicate" },
-                  { img: transform3, alt: "Fitness transformation 3 duplicate" },
-                  { img: transform4, alt: "Fitness transformation 4 duplicate" },
-                  { img: transform5, alt: "Fitness transformation 5 duplicate" },
-                  { img: transform6, alt: "Fitness transformation 6 duplicate" },
-                  { img: transform7, alt: "Fitness transformation 7 duplicate" },
-                  { img: transform8, alt: "Fitness transformation 8 duplicate" }
-                ].map((item, idx) => (
-                  <div 
-                    key={`duplicate-reverse-${idx}`}
-                    className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] px-2 md:px-3"
-                  >
-                    <div className="rounded-lg overflow-hidden shadow-lg border-2 border-primary bg-white aspect-[4/5]">
-                      <img 
-                        src={item.img} 
-                        alt={item.alt} 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </section>
