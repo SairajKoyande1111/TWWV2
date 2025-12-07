@@ -460,11 +460,11 @@ export default function Home() {
             <SheetContent side="right" className="w-[320px] bg-background border-l border-primary/20 p-0 overflow-y-auto">
               <div className="flex flex-col h-full">
                 {/* Logo Header */}
-                <div className="flex items-center justify-center py-4 px-4 border-b border-primary/10 bg-card">
+                <div className="flex items-center justify-center py-6 px-4 border-b border-primary/10 bg-card">
                   <img 
                     src={hocLogo} 
                     alt="Train With Winston" 
-                    className="h-16 w-auto"
+                    className="h-28 w-auto"
                     data-testid="img-mobile-menu-logo"
                   />
                 </div>
@@ -499,27 +499,45 @@ export default function Home() {
                   ))}
                 </nav>
 
-                {/* Social Media Links */}
+                {/* Social Media Links - Footer Style */}
                 <div className="py-4 px-4 border-b border-primary/10">
                   <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">Follow Us</h4>
                   <div className="flex items-center gap-3">
                     <a 
-                      href="https://www.instagram.com/house_of_champions_studio/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 hover:scale-110 transition-transform"
-                      data-testid="link-mobile-instagram"
-                    >
-                      <img src={instagramIcon} alt="Instagram" className="w-5 h-5 invert" />
-                    </a>
-                    <a 
                       href="https://www.facebook.com/house_of_champions_studio/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 hover:scale-110 transition-transform"
+                      className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#1877F2] hover:scale-110 transition-transform"
                       data-testid="link-mobile-facebook"
                     >
-                      <img src={facebookIcon} alt="Facebook" className="w-5 h-5 invert" />
+                      <SiFacebook className="w-6 h-6 text-white" />
+                    </a>
+                    <a 
+                      href="https://www.instagram.com/house_of_champions_studio/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#833AB4] via-[#E1306C] to-[#F77737] hover:scale-110 transition-transform"
+                      data-testid="link-mobile-instagram"
+                    >
+                      <SiInstagram className="w-6 h-6 text-white" />
+                    </a>
+                    <a 
+                      href="https://www.youtube.com/@houseofchampionsstudio" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#FF0000] hover:scale-110 transition-transform"
+                      data-testid="link-mobile-youtube"
+                    >
+                      <SiYoutube className="w-6 h-6 text-white" />
+                    </a>
+                    <a 
+                      href="https://wa.me/918374627462?text=Hi%20Coach%20Winston!%20I%27m%20interested%20in%20your%20fitness%20coaching%20program."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#25D366] hover:scale-110 transition-transform"
+                      data-testid="link-mobile-whatsapp"
+                    >
+                      <SiWhatsapp className="w-6 h-6 text-white" />
                     </a>
                   </div>
                 </div>
@@ -542,14 +560,14 @@ export default function Home() {
                   
                   {/* Email */}
                   <a 
-                    href="mailto:houseofchampions.in@gmail.com" 
+                    href="mailto:trainwithwinston@gmail.com" 
                     className="flex items-center gap-3 text-sm text-foreground hover:text-primary transition-colors group"
                     data-testid="link-mobile-email"
                   >
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Mail className="w-4 h-4 text-primary" />
                     </div>
-                    <span className="font-medium">houseofchampions.in@gmail.com</span>
+                    <span className="font-medium">trainwithwinston@gmail.com</span>
                   </a>
                   
                   {/* Address */}
@@ -557,24 +575,12 @@ export default function Home() {
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-4 h-4 text-primary" />
                     </div>
-                    <span className="font-medium leading-relaxed">House of Champions Studio, Hyderabad, India</span>
+                    <span className="font-medium leading-relaxed">House of Champions Studio, Kalyan, India</span>
                   </div>
                 </div>
 
-                {/* CTA Buttons */}
-                <div className="py-4 px-4 space-y-3 mt-auto">
-                  {/* WhatsApp Button */}
-                  <a 
-                    href="https://wa.me/918374627462?text=Hi%20Coach%20Winston!%20I%27m%20interested%20in%20your%20fitness%20coaching%20program."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold rounded-lg transition-all shadow-md"
-                    data-testid="button-mobile-whatsapp"
-                  >
-                    <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5" />
-                    <span>Chat on WhatsApp</span>
-                  </a>
-                  
+                {/* CTA Button */}
+                <div className="py-4 px-4 mt-auto">
                   {/* Consult Now Button */}
                   <Button 
                     onClick={() => { 
