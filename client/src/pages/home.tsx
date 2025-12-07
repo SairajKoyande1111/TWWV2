@@ -2822,10 +2822,10 @@ export default function Home() {
 
       {/* Sticky Bottom CTA Bar for Marketing Campaign */}
       <BottomStickyCta
-        originalPrice="₹5000"
-        discountedPrice="₹2500"
+        originalPrice="₹2500"
+        discountedPrice="₹99"
         ctaText="Transform Now"
-        slogan="Commit Online. Conquer Offline."
+        slogan="Try 1-Day Online Coaching Trial"
       />
     </div>
   );
