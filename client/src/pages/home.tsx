@@ -971,7 +971,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 data-testid="text-about-subtitle"
               >
-                Empowering everyone to achieve their fitness goals through expert-led online training programs
+                From our gym floor to your home - real training, real results, anywhere in the world
               </motion.p>
             </div>
 
@@ -988,10 +988,10 @@ export default function Home() {
                 >
                   <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-our-story">Our Story</h3>
                   <p className="text-foreground text-sm md:text-base leading-relaxed" data-testid="text-our-story">
-                    House of Champions was founded with a singular vision: to make professional fitness training accessible to everyone. We believe that every individual deserves access to expert guidance, personalized programs, and a supportive community that celebrates their fitness journey.
+                    House of Champions started as a physical gym - a place where real sweat hits the floor, real weights get lifted, and real transformations happen every single day. We built a community of dedicated athletes and fitness enthusiasts who push their limits together.
                   </p>
                   <p className="text-foreground text-sm md:text-base leading-relaxed">
-                    What started as a passion project has grown into a thriving online fitness community, helping thousands transform their lives through dedicated training, proper nutrition, and unwavering support.
+                    Now, we're bringing that same energy, expertise, and proven training methods directly to you - wherever you are. Our online training programs deliver the authentic HOC experience to clients across the globe.
                   </p>
                 </motion.div>
 
@@ -1003,28 +1003,28 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.1 }}
                   className="space-y-4"
                 >
-                  <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-our-vision">Our Vision</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-our-vision">Why Train With Us?</h3>
                   <p className="text-foreground text-sm md:text-base leading-relaxed" data-testid="text-our-vision">
-                    We envision a world where fitness is not just a goal, but a lifestyle embraced by people of all ages and backgrounds. Our mission is to break down barriers to fitness training by offering flexible, online programs that fit into your busy schedule.
+                    We know what works because we do it every day at our gym. Our online programs are built from years of hands-on experience training real clients with real goals. No fancy theories - just proven methods that get results.
                   </p>
                   <div className="space-y-3 pt-2">
                     <div className="flex items-start gap-3">
                       <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle2 className="h-4 w-4 text-primary" />
                       </div>
-                      <p className="text-foreground text-sm md:text-base">Expert-led training programs for everyone</p>
+                      <p className="text-foreground text-sm md:text-base">Same trainers who run our gym - now coaching you online</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle2 className="h-4 w-4 text-primary" />
                       </div>
-                      <p className="text-foreground text-sm md:text-base">Flexible online classes that work with your schedule</p>
+                      <p className="text-foreground text-sm md:text-base">Personalized programs that fit your lifestyle and goals</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle2 className="h-4 w-4 text-primary" />
                       </div>
-                      <p className="text-foreground text-sm md:text-base">Supportive community of like-minded champions</p>
+                      <p className="text-foreground text-sm md:text-base">Join our growing community of champions worldwide</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1067,12 +1067,12 @@ export default function Home() {
 
                 {/* Meet Our Founder */}
                 <div className="w-full text-left space-y-3">
-                  <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-founder">Meet Our Founder</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-primary" data-testid="heading-founder">The Man Behind HOC</h3>
                   <p className="text-foreground text-sm md:text-base leading-relaxed">
-                    With years of experience in fitness training and a deep passion for empowering people, our founder created House of Champions to share professional fitness expertise with everyone around the world.
+                    After building House of Champions gym from the ground up and transforming thousands of lives in person, I realized that great training shouldn't be limited by location. That's why I started online coaching - to bring the HOC experience to anyone, anywhere.
                   </p>
                   <p className="text-primary font-semibold text-sm md:text-base italic">
-                    "Your transformation is our mission. Every rep, every session, every victory - we celebrate it all with you."
+                    "I built this gym with my own hands. Now I'm building champions across the world. Let's get to work."
                   </p>
                 </div>
               </motion.div>
